@@ -1,0 +1,301 @@
+.chat-box {
+    height: 75vh;
+    max-height: 75vh;
+    position: relative;
+    background: linear-gradient(135deg, #f1f5ff 0%, #e3f0ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(7, 126, 255, 0.10), 0 1.5px 6px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.chat-user {
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1.5px solid #bcdcff;
+    background: linear-gradient(90deg, #e3f0ff 60%, #f9fbff 100%);
+}
+
+.chat-user img {
+    width: 32px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(7,126,255,0.08);
+    border: 2px solid #e3f0ff;
+    transition: transform 0.2s;
+}
+.chat-user img:first-child {
+    width: 44px;
+    aspect-ratio: 1/1;
+    border: 2.5px solid #077eff;
+}
+.chat-user img:hover {
+    transform: scale(1.08);
+}
+.chat-user p {
+    flex: 1;
+    font-size: 17px;
+    font-weight: 500;
+    color: #393939;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.2px;
+}
+
+.chat-msg {
+    height: calc(100% - 80px);
+    padding-bottom: 60px;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    background: linear-gradient(135deg, #f9fbff 0%, #e3f0ff 100%);
+}
+
+.s-msg div img, .r-msg div img {
+    width: 32px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid #e3f0ff;
+    box-shadow: 0 2px 8px rgba(7,126,255,0.08);
+}
+
+.s-msg, .r-msg {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    gap: 10px;
+    padding: 0px 22px;
+}
+
+.r-msg {
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
+.msg {
+    color: white;
+    background: linear-gradient(90deg, #077eff 70%, #4fc3ff 100%);
+    padding: 10px 14px;
+    max-width: 260px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 14px 14px 0px 14px;
+    margin-bottom: 32px;
+    word-break: break-word;
+    white-space: pre-line;
+    box-shadow: 0 2px 8px rgba(7,126,255,0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.msg:hover {
+    background: linear-gradient(90deg, #005ecb 70%, #2bb8ff 100%);
+    box-shadow: 0 4px 16px rgba(7,126,255,0.15);
+}
+.r-msg .msg {
+    border-radius: 14px 14px 14px 0px;
+}
+
+.s-msg div, .r-msg div {
+    text-align: center;
+    font-size: 10px;
+    color: #6c7a89;
+}
+
+.msg-img {
+    max-width: 260px;
+    margin-bottom: 32px;
+    border-radius: 12px;
+    border: 2px solid #bcdcff;
+    box-shadow: 0 2px 8px rgba(7,126,255,0.10);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+.msg-img:hover {
+    border: 2px solid #077eff;
+    box-shadow: 0 4px 16px rgba(7,126,255,0.15);
+}
+
+.remove-image-btn {
+    margin-left: 12px;
+    background: none;
+    border: none;
+    color: #077eff;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background 0.2s, color 0.2s;
+}
+.remove-image-btn:hover {
+    background: #e3f0ff;
+    color: #005ecb;
+}
+
+.send-key-checkbox {
+    accent-color: #077eff;
+    width: 18px;
+    height: 18px;
+    margin-right: 9px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 1.5px 6px rgba(7,126,255,0.08);
+    vertical-align: middle;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+label .send-key-checkbox:focus {
+    outline: 2px solid #4fc3ff;
+    outline-offset: 2px;
+}
+
+label span {
+    font-size: 16px;
+    color: #077eff;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    vertical-align: middle;
+    user-select: none;
+    transition: color 0.2s;
+    display: inline-block;
+    line-height: 1;
+}
+
+label:hover span {
+    color: #005ecb;
+}
+
+.selected-image {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border: 3px solid #077eff;
+    background: linear-gradient(135deg, #e3f0ff 0%, #f9fbff 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(7, 126, 255, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+    padding: 10px;
+    margin: 14px auto 24px auto;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    object-fit: cover;
+}
+
+.selected-image:hover {
+    box-shadow: 0 8px 32px rgba(7, 126, 255, 0.18);
+    border-color: #005ecb;
+}
+
+.chat-msg .details {
+    list-style: none;
+    background: #fff;
+    border: 1.5px solid #bcdcff;
+    padding: 7px 0;
+    margin: 0;
+    border-radius: 7px;
+    width: 130px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.10);
+    font-size: 13px;
+}
+
+.sub-menu {
+    background: linear-gradient(135deg, #e3f0ff 0%, #f9fbff 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(7, 126, 255, 0.10);
+    padding: 22px 22px;
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border: 1.5px solid #d0e3ff;
+    transition: box-shadow 0.2s;
+    font-size: 13px;
+}
+.sub-menu:hover {
+    box-shadow: 0 8px 24px rgba(7, 126, 255, 0.18);
+}
+
+.aes-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7,126,255,0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.aes-form {
+    background: linear-gradient(135deg, #e3f0ff 0%, #f9fbff 100%);
+    padding: 36px 40px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(7, 126, 255, 0.14), 0 1.5px 6px rgba(0,0,0,0.08);
+    min-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    border: 2px solid #d0e3ff;
+    transition: box-shadow 0.2s;
+}
+
+.aes-form h2 {
+    margin: 0 0 12px 0;
+    font-size: 22px;
+    color: #077eff;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.aes-form input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1.5px solid #bcdcff;
+    border-radius: 8px;
+    outline: none;
+    background: #f6faff;
+    transition: border 0.2s;
+    margin-bottom: 10px;
+}
+
+.aes-form input:focus {
+    border-color: #077eff;
+    background: #eaf4ff;
+}
+
+.aes-form button {
+    margin-right: 12px;
+    padding: 10px 22px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, #077eff 60%, #4fc3ff 100%);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(7, 126, 255, 0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.aes-form button:last-child {
+    background: #e3e9f7;
+    color: #077eff;
+    margin-right: 0;
+}
+
+.aes-form button:hover {
+    background: linear-gradient(90deg, #005ecb 60%, #2bb8ff 100%);
+    box-shadow: 0 4px 16px rgba(7, 126, 255, 0.18);
+}
+
+.aes-form button:last-child:hover {
+    background: #d0e3ff;
+    color: #005ecb;
+}

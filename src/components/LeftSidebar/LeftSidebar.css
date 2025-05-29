@@ -1,0 +1,174 @@
+.ls {
+    background: linear-gradient(135deg, #001030 60%, #003366 100%);
+    color: #fff;
+    height: 75vh;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px 0 rgba(0,16,48,0.18);
+    overflow: hidden;
+}
+
+.ls-top {
+    padding: 28px 24px 16px 24px;
+}
+
+.ls-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ls-nav .logo {
+    max-width: 150px;
+    filter: drop-shadow(0 2px 8px #00103055);
+}
+
+.ls-nav .menu img {
+    max-height: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.ls-nav .menu img:hover {
+    opacity: 1;
+}
+
+.ls-search {
+    background: rgba(0,38,112,0.85);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-top: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0,38,112,0.08);
+}
+
+.ls-search img {
+    width: 18px;
+    opacity: 0.8;
+}
+
+.ls-search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 13px;
+    width: 100%;
+    letter-spacing: 0.02em;
+}
+
+.ls-search input::placeholder {
+    color: #bfc9d1;
+    opacity: 0.8;
+}
+
+.ls-list {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    overflow-y: auto;
+    padding-right: 4px;
+    margin-top: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #077EFF #001030;
+}
+
+.ls-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ls-list::-webkit-scrollbar-thumb {
+    background: #077EFF;
+    border-radius: 4px;
+}
+
+.friends {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: background 0.18s, box-shadow 0.18s;
+}
+
+.friends img {
+    width: 38px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px 0 rgba(7,126,255,0.10);
+    border: 2px solid #fff2;
+}
+
+.friends div {
+    display: flex;
+    flex-direction: column;
+}
+
+.friends span {
+    color: #b0b8c1;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.friends:hover {
+    background: linear-gradient(90deg, #077EFF 70%, #0050c8 100%);
+    box-shadow: 0 2px 12px 0 rgba(7,126,255,0.10);
+}
+
+.friends:hover span {
+    color: #fff;
+}
+
+.ls-nav .menu {
+    position: relative;
+    padding: 10px 0;
+}
+
+.menu .sub-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 150px;
+    background: #fff;
+    padding: 18px 0;
+    border-radius: 8px;
+    color: #222;
+    display: none;
+    box-shadow: 0 4px 24px 0 rgba(0,16,48,0.13);
+    z-index: 10;
+    animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.sub-menu hr {
+    border: none;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 10px 0;
+}
+
+.sub-menu p {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.sub-menu p:hover {
+    background: #077EFF;
+    color: #fff;
+}
+
+.menu:hover .sub-menu {
+    display: block;
+}
