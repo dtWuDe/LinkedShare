@@ -13,4 +13,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 # How to run
 web app: npm run dev
+
 run server: node server/server.js
+
